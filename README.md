@@ -12,5 +12,5 @@ The following steps will help you create an S3 bucket in your AWS to upload file
 6. Select your desired file and dragging to upload box.
 7. Upload file
 
-##Step 2: Using Textract
+## Step 2: Using Textract
 1. 
