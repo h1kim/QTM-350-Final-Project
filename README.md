@@ -1,8 +1,10 @@
-# QTM-350-Final-Project-Spring22
-## Project Overview
-As students interested in the intersection of the financial markets and the data science world, we are eager to apply analytical and scholarly approaches to finance. 
-Particularly, we are fascinated by the financial markets in the last century and want to explore topics such as the historical returns of stock and bond markets during the recession days of 1930s (many researchers omit data from the Great Depression and the second world war to start the analysis in the 1950s). As the global financial market of today undergoes many unprecedented challenges, we want to go back to history and see if any lessons can be discovered.
-However, many reports and research back then are not digitized but only available in hard copies of books, newspapers, and other printouts, and it is a demanding process to manually input all the data to digital data frames that computers today can understand
-Therefore, we choose to work with Amazon Textract ML service, which can scan the input file, extract the text information, and output as a csv file.
+# QTM-350 Final Project Spring22
+## Amazon Textract
+Amazon Textract is an Amazon Web Services ML service that can extract data and text through scanned files, including images, PDFs, and more. It can automatically convert numbers and text to digital files, which is valuable for preservation of information as well as research purposes. In this project, we experimented with text shape (curved v. straight) and the location of data in the file.
 
-## Option 1: Use the AWS Textract from SageMaker
+## Step 1: Uploading file to S3 in a New Bucket
+1. After logging into AWS services, select S3 in search bar.
+2. Create bucket and give a unique name.
+3. Select next using default settings, and create bucket.
+4. Navigate to the bucket in the S3 console, and select Upload.
+5. Select desired file.
