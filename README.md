@@ -29,6 +29,10 @@ The following steps will guide using Textract in AWS.
 11. Select files and click on 'Download results.'
 12. Open up the Excel Table to observe results. 
 
+## Architecture: Textract Flow Chart
+To better illustrate the process, we created the following flow chart to demonstrate the AWS workstream:
+![image](https://github.com/h1kim/QTM-350-Final-Project/assets/92637998/c6b1f559-e406-4284-8ef5-a6905ade92ab)
+
 ## Supported Regions
 Amazon Textract API is available in the regions below:
 - US East (N. Virginia)
