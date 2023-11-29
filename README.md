@@ -7,12 +7,14 @@ Amazon Textract is an Amazon Web Services ML service that can extract data and t
 ## Step 1: Uploading file(s) to S3 in a New Bucket
 The following steps will help you create an S3 bucket in your AWS to upload files od scanned documents.
 1. After logging into AWS services, search and choose S3 in the search bar.
-2. Select create bucket and use a unique name.
+2. Select create bucket and use a unique name. Note that bucket names can include only lower case letters, dots, hyphens, and numbers (For more specific rules for Bucket naming on Amazon S3, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html.).
 3. Keep the default settings and select 'Next'.
 4. Create bucket.
 5. Select created bucket from the console and click 'Upload.'
 6. Select your desired file and dragging to upload box.
 7. Scroll down to select 'Upload.'
+
+
 
 ## Step 3: Using Textract from S3
 The following steps will guide using Textract in AWS.
@@ -27,12 +29,15 @@ The following steps will guide using Textract in AWS.
 9. Click 'Start Processing.'
 10. Wait until the results under 'Status' changes from 'Processing' to 'Ready for Download.'
 11. Select files and click on 'Download results.'
-12. Open up the Excel Table to observe results. 
+12. Open up the Excel Table to observe results.
+
 
 ## Architecture: Textract Flow Chart
 To better illustrate the process, we created the following flow chart to demonstrate the AWS workstream:
 ![image](https://github.com/h1kim/QTM-350-Final-Project/assets/92637998/c6b1f559-e406-4284-8ef5-a6905ade92ab)
+First, an image file or PDF file is uploaded to Amazon S3, a storage location. Then, Amazon S3 uses the function Fn-A to call AWS Textract as a key-value pair from the file source. Then, Textract automatically extracts data from the files within S3. 
 
+For more in-depth information about invoking the Lambda function using Amazon S3, refer to https://docs.aws.amazon.com/lambda/latest/dg/with-s3-example.html.
 ## Supported Regions
 Amazon Textract API is available in the regions below:
 - US East (N. Virginia)
