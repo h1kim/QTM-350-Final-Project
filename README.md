@@ -1,4 +1,4 @@
-# QTM-350 Final Project Spring 23
+# QTM-350 Final Project Fall 23
 The following demo will demonstrate steps to upload files in S3 to digitalize columns of data to your computer.
 
 ## Amazon Textract
@@ -28,3 +28,23 @@ The following steps will guide using Textract in AWS.
 10. Wait until the results under 'Status' changes from 'Processing' to 'Ready for Download.'
 11. Select files and click on 'Download results.'
 12. Open up the Excel Table to observe results. 
+
+## Supported Regions
+Amazon Textract API is available in the regions below:
+- US East (N. Virginia)
+- US East (Ohio)
+- US West (Northern California)
+- US West (Oregon)
+- Asia Pecific (Mumbai)
+- Asia Pecific (Seoul)
+- Asia Pecific (Singapore)
+- Asia Pecific (Sydney)
+- Canada (Central)
+- Europe (Frankfurt)
+- Europe (Ireland)
+- Europe (London)
+- Europe (Paris)
+- AWS GovCloud (US-East)
+- AWS GovCloud (US-West)
+
+For more information on tiers and pricing, refer to https://aws.amazon.com/textract/pricing/
