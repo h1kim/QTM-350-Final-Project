@@ -39,7 +39,7 @@ The  steps below guides how to use Textract in AWS.
 11. Select files and click on 'Download results.'
 12. Open up the Excel Table to observe results.
 
-For further clarification, feel free to visit [Getting Started with Textract]([url](https://aws.amazon.com/getting-started/hands-on/extract-text-with-amazon-textract/?ref=gsrchandson))
+For further clarification, feel free to visit https://aws.amazon.com/getting-started/hands-on/extract-text-with-amazon-textract/?ref=gsrchandson
 
 ## Step 3: Our Project: Testing Degree of Blurriness and Mismatched Rate of Extracted Data
 The following steps will outline a general procedure of how to test the accuracy of extracted data with different degrees of data in Python.
@@ -91,9 +91,10 @@ Amazon Textract API is available in the regions below:
 - AWS GovCloud (US-East)
 - AWS GovCloud (US-West)
 
-For more information on tiers and pricing, refer to [Textract Regions and Pricing. ]([url](https://aws.amazon.com/textract/pricing/)https://aws.amazon.com/textract/pricing/)
+For more information on tiers and pricing, refer to https://aws.amazon.com/textract/pricing/)https://aws.amazon.com/textract/pricing/
 
 ## Resources Used
-1. [AWS S3 Features]([url](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html) - The S3 bucket provides scalable, durable, and secure storage for our documents from which Amazon Textract can fetch for analysis.
-2. [Amazon Textract Documentation]([url](https://docs.aws.amazon.com/textract/)https://docs.aws.amazon.com/textract/)
-3. [Textract Documentation]([url](https://docs.aws.amazon.com/textract/latest/dg/sync.html)https://docs.aws.amazon.com/textract/latest/dg/sync.html)
+1. AWS S3 Features - The S3 bucket provides scalable, durable, and secure storage for our documents from which Amazon Textract can fetch for analysis. https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html
+3.Amazon Textract Documentation - The API is called to analyze the documents stored in the S3 bucket. [https://docs.aws.amazon.com/textract/)https://docs.aws.amazon.com/textract/)](https://docs.aws.amazon.com/textract/)
+4. Textract Applications and Uses - There are various use cases for Amazon Textract, such as natural language processing, capture of data from various sources, and automating data processing.
+[https://docs.aws.amazon.com/textract/latest/dg/sync.html)https://docs.aws.amazon.com/textract/latest/dg/sync.html](https://docs.aws.amazon.com/textract/latest/dg/what-is.html)https://docs.aws.amazon.com/textract/latest/dg/what-is.html
