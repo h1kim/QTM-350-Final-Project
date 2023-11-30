@@ -4,6 +4,8 @@
 This README provides a step-by-step instructions for uploading files to Amazon S3 and using
 Textract to convert scanned documents into digital files. Our project focuses on utilizing Amazon Textract to extract data and text from scanned files such as images and PDFs. The goal is for columns of data to be accessible on your computer from an originally paper format. 
 
+Here is the link to our project blog: https://final-project-ron.s3.amazonaws.com/350_final_project.html
+
 ## Amazon Textract
 Amazon Textract is an Amazon Web Services ML service that can extract data and text through scanned files, including images, PDFs, and more. It can automatically convert numbers and text to digital files, which is valuable for preservation of information. 
 
