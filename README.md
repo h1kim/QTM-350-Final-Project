@@ -1,13 +1,8 @@
 # QTM-350 Final Project Fall 23
-The following demo will demonstrate steps to upload files in S3 to digitalize columns of data to your computer.
 
 ## Amazon Textract Demo
-Our project focuses on utilizing Amazon Textract, an AWS Machine
-Learning service, to extract data and text from scanned files such as
-images and PDFs. The goal is for columns of data to be accessible on
-your computer from an originally paper format. This README provides
-step-by-step instructions for uploading files to Amazon S3 and using
-Textract to convert scanned documents into digital files.
+This README provides a step-by-step instructions for uploading files to Amazon S3 and using
+Textract to convert scanned documents into digital files. Our project focuses on utilizing Amazon Textract to extract data and text from scanned files such as images and PDFs. The goal is for columns of data to be accessible on your computer from an originally paper format. 
 
 ## Amazon Textract
 Amazon Textract is an Amazon Web Services ML service that can extract data and text through scanned files, including images, PDFs, and more. It can automatically convert numbers and text to digital files, which is valuable for preservation of information. 
@@ -46,15 +41,9 @@ The following steps will outline a general procedure of how to test the accuracy
 1. Upload images or files of data with varying degrees of blurriness in a folder either on the computer or in S3.
 2. Call the image path.
 3. Create a dataframe to store the results from Step 2 above using "pd.DataFrame()" function.
-4. Calculate the confidence intervals of the dataframe created, and save results to the new dataframe using the following instruction:
-   Call the Analyze Document API:
-    response = client.analyze_document(Document={'Bytes': image_bytes}, FeatureTypes=['TABLES'])
-    Extract the Confidence Values: 
-    confidence_values = [block['Confidence'] for block in response['Blocks'] if block['BlockType'] == 'CELL']
-From this point, you can simply place the values into a numpy mean()
-function to find the mean confidence value for each image.
-6. Extract the output of the dataframe from the images, and compile into a list.
-7. For visualization, use the package 'matplotlib.pyplot' to label degree of blurriness on the x-axis and mean confidence on the y-axis.
+4. Calculate the confidence intervals of the dataframe created, and save results to the new dataframe.
+5. Extract the output of the dataframe from the images, and compile into a list.
+6. For visualization, use the package 'matplotlib.pyplot' to label degree of blurriness on the x-axis and mean confidence on the y-axis.
 
 ## Architecture: Textract Flow Chart
 To better illustrate the process, we created the following flow chart to demonstrate the AWS workstream:
