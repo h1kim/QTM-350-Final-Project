@@ -1,21 +1,31 @@
 # QTM-350 Final Project Fall 23
 The following demo will demonstrate steps to upload files in S3 to digitalize columns of data to your computer.
 
+## Amazon Textract Demo
+Our project focuses on utilizing Amazon Textract, an AWS Machine
+Learning service, to extract data and text from scanned files such as
+images and PDFs. The goal is for columns of data to be accessible on
+your computer from an originally paper format. This README provides
+step-by-step instructions for uploading files to Amazon S3 and using
+Textract to convert scanned documents into digital files.
+
 ## Amazon Textract
 Amazon Textract is an Amazon Web Services ML service that can extract data and text through scanned files, including images, PDFs, and more. It can automatically convert numbers and text to digital files, which is valuable for preservation of information. 
 
 ## Step 1: Uploading file(s) to S3 in a New Bucket
 The following steps will help you create an S3 bucket in your AWS to upload files od scanned documents.
 1. After logging into AWS services, search and choose S3 in the search bar.
-2. Select create bucket and use a unique name. Note that bucket names can include only lower case letters, dots, hyphens, and numbers (For more specific rules for Bucket naming on Amazon S3, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html.).
-3. Keep the default settings and select 'Next'.
-4. Create bucket.
-5. Select created bucket from the console and click 'Upload.'
-6. Select your desired file and dragging to upload box.
-7. Scroll down to select 'Upload.'
+2. Select 'Create Bucket' and create a unique name. Note that bucket names can include only lower case letters, dots, hyphens, and numbers (For more specific rules for Bucket naming on Amazon S3, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html.).
+3. Select a Region to create your bucket it
+4. Keep the default settings and select 'Next'.
+5. Create bucket.
+6. Select created bucket from the console and click 'Upload.'
+7. Select your desired file and dragging to upload box.
+8. Scroll down to select 'Upload.'
+9. Select the checkbox next to the file in the bucket.
 
-## Step 3: Using Textract from S3
-The following steps will guide using Textract in AWS.
+## Step 2: Using Textract from S3
+The  steps below guides how to use Textract in AWS.
 1. On the AWS console, click on 'Textract.'
 2. Select 'Try Amazon Textract.'
 3. Scroll down to the bottom, and select 'Upload documents.'
@@ -29,6 +39,22 @@ The following steps will guide using Textract in AWS.
 11. Select files and click on 'Download results.'
 12. Open up the Excel Table to observe results.
 
+For further clarification, feel free to visit [Getting Started with Textract]([url](https://aws.amazon.com/getting-started/hands-on/extract-text-with-amazon-textract/?ref=gsrchandson))
+
+## Step 3: Our Project: Testing Degree of Blurriness and Mismatched Rate of Extracted Data
+The following steps will outline a general procedure of how to test the accuracy of extracted data with different degrees of data in Python.
+1. Upload images or files of data with varying degrees of blurriness in a folder either on the computer or in S3.
+2. Call the image path.
+3. Create a dataframe to store the results from Step 2 above using "pd.DataFrame()" function.
+4. Calculate the confidence intervals of the dataframe created, and save results to the new dataframe using the following instruction:
+   Call the Analyze Document API:
+    response = client.analyze_document(Document={'Bytes': image_bytes}, FeatureTypes=['TABLES'])
+    Extract the Confidence Values: 
+    confidence_values = [block['Confidence'] for block in response['Blocks'] if block['BlockType'] == 'CELL']
+From this point, you can simply place the values into a numpy mean()
+function to find the mean confidence value for each image.
+6. Extract the output of the dataframe from the images, and compile into a list.
+7. For visualization, use the package 'matplotlib.pyplot' to label degree of blurriness on the x-axis and mean confidence on the y-axis.
 
 ## Architecture: Textract Flow Chart
 To better illustrate the process, we created the following flow chart to demonstrate the AWS workstream:
@@ -36,7 +62,6 @@ To better illustrate the process, we created the following flow chart to demonst
 First, an image file or PDF file is uploaded to Amazon S3, a storage location. Then, Amazon S3 uses the function Fn-A to call AWS Textract as a key-value pair from the file source. Then, Textract automatically extracts data from the files within S3. 
 
 Here is an example of an example workflow:
-S3
 1. S3 Bucket: The user uploads images and pdf files of images to an S3 bucket.
 2. Amazon Textract: Amazon Textract automatically begins processing the documents
 3. Amazon Textract Processing: Textract processes the files, extracting numerical and textal data.
@@ -47,6 +72,7 @@ S3
 As AWS regularly updates and alters its services, it is important to note that the architecture can vary on different uses cases. It is recommended to keep in update with the latest AWS documentation for the most upto-date information on Textract's workflow. 
 
 For more in-depth information about invoking the Lambda function using Amazon S3, refer to https://docs.aws.amazon.com/lambda/latest/dg/with-s3-example.html.
+
 ## Supported Regions
 Amazon Textract API is available in the regions below:
 - US East (N. Virginia)
@@ -65,4 +91,9 @@ Amazon Textract API is available in the regions below:
 - AWS GovCloud (US-East)
 - AWS GovCloud (US-West)
 
-For more information on tiers and pricing, refer to https://aws.amazon.com/textract/pricing/
+For more information on tiers and pricing, refer to [Textract Regions and Pricing. ]([url](https://aws.amazon.com/textract/pricing/)https://aws.amazon.com/textract/pricing/)
+
+## Resources Used
+1. [AWS S3 Features]([url](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html) - The S3 bucket provides scalable, durable, and secure storage for our documents from which Amazon Textract can fetch for analysis.
+2. [Amazon Textract Documentation]([url](https://docs.aws.amazon.com/textract/)https://docs.aws.amazon.com/textract/)
+3. [Textract Documentation]([url](https://docs.aws.amazon.com/textract/latest/dg/sync.html)https://docs.aws.amazon.com/textract/latest/dg/sync.html)
